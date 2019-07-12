@@ -1,0 +1,6 @@
+MainActivity.java => (Click FETCH button) -> FetchJsonData.java
+                  => (Click VIEW button)  -> employee_list_activity.java
+
+employee_list_activity.java =>
+    (Click items in the list) => pre_map_activity.java -> try_map_activity.java
+                              => InputLocationDialogFragment.java -> test1MapsActivity.java -> saveLocation_map_activity.java
