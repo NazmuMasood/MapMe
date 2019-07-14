@@ -28,7 +28,7 @@ public class pre_map_activity extends AppCompatActivity {
         getInfo(id);
 
 
-        Intent intent = new Intent(this, try_map_activity.class);
+        Intent intent = new Intent(this, map_activity.class);
         intent.putExtra("name", name);
         intent.putExtra("latitude", latitude);
         intent.putExtra("longitude", longitude);

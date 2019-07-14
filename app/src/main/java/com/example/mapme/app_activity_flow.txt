@@ -1,6 +1,18 @@
-MainActivity.java => (Click FETCH button) -> FetchJsonData.java
-                  => (Click VIEW button)  -> employee_list_activity.java
+1MainActivity.java => (Click FETCH button) => 2FetchJsonData.java
+                  => (Click VIEW button)  => 3employee_list_activity.java
 
-employee_list_activity.java =>
-    (Click items in the list) => pre_map_activity.java -> try_map_activity.java
-                              => InputLocationDialogFragment.java -> test1MapsActivity.java -> saveLocation_map_activity.java
+3employee_list_activity.java => (Click items in the list)
+    (Location available)     => 4pre_map_activity.java -> 5map_activity.java
+    (Location not available) => 6InputLocationDialogFragment.java
+
+5map_activity.java => (Click on Marker on map) => 7jobSchedulerActivity.java
+
+6InputLocationDialogFragment.java => (A yes / no dialog box pops up)
+    (Select yes) =>  8preSaveLocationPermissionActivity.java -> 9saveLocation_map_activity.java
+    (Select no) =>  3employee_list_activity.java
+
+
+
+
+
+

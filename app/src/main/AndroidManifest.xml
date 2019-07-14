@@ -25,15 +25,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".saveLocation_map_activity"></activity>
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/map_api_key" />
 
-        <activity android:name=".try_map_activity"></activity>
-        <activity android:name=".pre_map_activity" />
-        <activity android:name=".employee_list_activity" />
+        <activity android:name=".jobSchedulerActivity" android:noHistory="true"></activity>
+        <activity android:name=".saveLocation_map_activity" />
+        <activity android:name=".map_activity" />
+        <activity android:name=".pre_map_activity"
+            android:noHistory="true"/>
+        <activity android:name=".employee_list_activity"
+            android:noHistory="true"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,7 +44,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".test1MapsActivity" />
+        <activity android:name=".preSaveLocationPermissionActivity"
+            android:noHistory="true"/>
+
+        <receiver
+            android:name=".AlarmTriggerBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

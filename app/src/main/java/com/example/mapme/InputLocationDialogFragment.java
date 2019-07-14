@@ -27,7 +27,7 @@ public class InputLocationDialogFragment extends DialogFragment {
                     public void onClick(DialogInterface dialog, int id) {
                         // FIRE ZE MISSILES!
                         //Toast.makeText(context,"You clicked yes",Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(context,test1MapsActivity.class);
+                        Intent intent = new Intent(context, preSaveLocationPermissionActivity.class);
                         intent.putExtra("id",clicked_id);
                         startActivity(intent);
                         //intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);

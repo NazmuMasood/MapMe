@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +21,7 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-public class test1MapsActivity extends AppCompatActivity {
+public class preSaveLocationPermissionActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 1;
     TextView textView; Button button; Integer clicked_id; Double latitude, longitude;
     private FusedLocationProviderClient mFusedLocationProviderClient;
@@ -30,7 +29,7 @@ public class test1MapsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test1mapsactivity);
+        setContentView(R.layout.activity_pre_save_location_permission);
 
         clicked_id = getIntent().getIntExtra("id", 0);
 
@@ -66,7 +65,7 @@ public class test1MapsActivity extends AppCompatActivity {
                         .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                ActivityCompat.requestPermissions(test1MapsActivity.this,
+                                ActivityCompat.requestPermissions(preSaveLocationPermissionActivity.this,
                                         new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
                                         MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION);
                             }
@@ -75,7 +74,7 @@ public class test1MapsActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
-                                startActivity(new Intent(test1MapsActivity.this, employee_list_activity.class));
+                                startActivity(new Intent(preSaveLocationPermissionActivity.this, employee_list_activity.class));
                             }
                         })
                         .create()
@@ -83,7 +82,7 @@ public class test1MapsActivity extends AppCompatActivity {
 
             } else {
                 // No explanation needed; request the permission
-                ActivityCompat.requestPermissions(test1MapsActivity.this,
+                ActivityCompat.requestPermissions(preSaveLocationPermissionActivity.this,
                         new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
                         MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION);
 
@@ -107,7 +106,7 @@ public class test1MapsActivity extends AppCompatActivity {
                                 showInMap();
                             }
                             else {
-                                Toast.makeText(test1MapsActivity.this,"Device location not available i.e. null",Toast.LENGTH_LONG).show();
+                                Toast.makeText(preSaveLocationPermissionActivity.this,"Device location not available i.e. null",Toast.LENGTH_LONG).show();
                             }
                         }
                     });
@@ -127,7 +126,7 @@ public class test1MapsActivity extends AppCompatActivity {
     }
 
     private void showInMap(){
-        Intent intent = new Intent(test1MapsActivity.this, saveLocation_map_activity.class);
+        Intent intent = new Intent(preSaveLocationPermissionActivity.this, saveLocation_map_activity.class);
         intent.putExtra("id", clicked_id);
         intent.putExtra("latitude", latitude);
         intent.putExtra("longitude", longitude);
